@@ -1,0 +1,20 @@
+<h1>User#show</h1>
+<p>Find me in app/views/user/show.html.erb</p>
+<h1>Hello <%= current_user.name %></h1>
+<h2>You are user <%= current_user.id %></h2>
+<a href="/users/<%= current_user.id %>/edit">Edit User</a>
+
+<p>List of all users</p>
+
+<table>
+    <tr>
+        <th>Name:</th>
+        <th>Email:</th>
+    </tr>
+    <tr>
+      <% @user.each do |u| %>
+      <td><%= u.name%></td>
+      <td><%= u.email%></td>
+      <% end %>
+    </tr>
+</table>

@@ -1,0 +1,11 @@
+<% if flash[:errors] %>
+  <%= flash[:errors] %>
+  <% end %>
+<h1>EDIT Your Information</h1>
+<form action="/users/<%= @user.id %>" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="patch" >
+  <label>Email:</label><input type='text' name='user[email]'value="<%= @user.email %>"></br>
+  <label>Name:</label><input type='text' name='user[name]' value="<%= @user.name %>"></br>
+  <input type='submit' value='Update'>
+</form>
